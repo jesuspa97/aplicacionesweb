@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2B</title>
+    <style>
+        .contenedor{margin-left: 19%;border: 2px solid black;width: 65%;height: 50vh;background-color: #efefef;}
+        form{margin-left: 5%;}
+        input{margin-top: 3%;}
+        label{font-weight: bold;margin-right: 4px;}
+        #texto{position: relative;left: 365px;}
+        /*#imagen{background-image: url(../imagenes/logo_arduino.png);width: 30px;}*/
+    </style>
+</head>
+<body>
+    <div id="texto">This is a feedback form</div>
+    <div class="contenedor">
+        <form action="">
+            <label for="name">Name:</label>
+            <input type="text" name="name" id="name"><br>
+            <label for="email">E-mail:</label>
+            <input type="email" name="email" id="email"><br>
+            <label for="">Phone:</label><input type="number" min="600000000" max="999999999"><br>
+            <label>Callback on:</label><input type="number">
+            <input type="time" name="" id="">UTC <br>
+            <label for="">Priority:</label><input type="range" value="0"><br>
+            <input type="button" value="Request Call">
+        </form>
+    </div>
+    
+</body>
+</html>
