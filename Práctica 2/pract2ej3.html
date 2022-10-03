@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 3</title>
+    <style>
+        div{background-color: #f5f5f5;margin-top: 10px;padding:10px}
+        #boton{background-color: #3e3e3e;margin-inline: 100vh;color: white;}
+    </style>
+</head>
+<body>
+
+<script>
+    
+    function corregir(){
+        var acierto=0;
+        if(document.getElementById('respuesta12').checked){
+            acierto+=+1
+        }
+        else{
+            acierto+=+0
+        }
+
+        if(document.getElementById('respuesta24').checked){
+            acierto+=+1
+        }
+        else{
+            acierto+=+0
+        }
+
+        if(document.getElementById('respuesta31').checked){
+            acierto+=+1
+        }
+        else{
+            acierto+=+0
+        }
+
+        if(document.getElementById('respuesta45').checked){
+            acierto+=+1
+        }
+        else{
+            acierto+=+0
+        }
+
+        if(document.getElementById('respuesta53').checked){
+            acierto+=+1
+        }
+        else{
+            acierto+=+0
+        }
+        
+        nota=acierto*2;
+        alert('Has acertado '+acierto+'/5 preguntas por lo que has sacado un '+nota+'.')
+    }
+</script>
+
+    <div id="pregunta1">¿Cuál es el resultado de 3^3?<br><br>
+        Seleccione una respuesta: <br>
+        <input type="radio" name="rp1" id="respuesta11" class="">
+        <label for="respuesta11">333</label> <br>
+        <input type="radio" name="rp1" id="respuesta12" class="">
+        <label for="respuesta12">9</label> <br>
+        <input type="radio" name="rp1" id="respuesta13" class="">
+        <label for="respuesta13">6</label> <br>
+        <input type="radio" name="rp1" id="respuesta14" class="">
+        <label for="respuesta14">666</label> <br>
+        <input type="radio" name="rp1" id="respuesta15" class="">
+        <label for="respuesta15">99</label>
+    </div>
+
+    <div id="pregunta2">¿Cuál de los siguientes NO es un país?<br><br>
+        Seleccione una respuesta: <br>
+        <input type="radio" name="rp2" id="respuesta21" class="">
+        <label for="respuesta21">ESPAÑA</label> <br>
+        <input type="radio" name="rp2" id="respuesta22" class="">
+        <label for="respuesta22">IRLANDA</label> <br>
+        <input type="radio" name="rp2" id="respuesta23" class="">
+        <label for="respuesta23">CHINA</label> <br>
+        <input type="radio" name="rp2" id="respuesta24" class="">
+        <label for="respuesta24">ALBACETE</label> <br>
+        <input type="radio" name="rp2" id="respuesta25" class="">
+        <label for="respuesta25">URUGUAY</label>
+    </div>
+
+    <div id="pregunta3">¿Cómo se escribe el operador AND en javascript?<br><br>
+        Seleccione una respuesta: <br>
+        <input type="radio" name="rp3" id="respuesta31" class="">
+        <label for="respuesta31">&</label> <br>
+        <input type="radio" name="rp3" id="respuesta32" class="">
+        <label for="respuesta32">-a</label> <br>
+        <input type="radio" name="rp3" id="respuesta33" class="">
+        <label for="respuesta33">|</label> <br>
+        <input type="radio" name="rp3" id="respuesta34" class="">
+        <label for="respuesta34">/</label> <br>
+        <input type="radio" name="rp3" id="respuesta35" class="">
+        <label for="respuesta35">$</label>
+    </div>
+
+    <div id="pregunta4">Tenemos tres peceras y 56 peces. Los tamaños de las peceras son pequeño, mediano y grande, siendo la pequeña la mitad de la mediana y la grande el doble. Como no tenemos ninguna preferencia en cuanto al reparto de los peces, decidimos que en cada una de ellas haya una cantidad de peces proporcional al tamaño de cada pecera. ¿Cuántos peces pondremos en cada pecera?<br><br>
+        Seleccione una respuesta (pequeña-mediana-grande): <br>
+        <input type="radio" name="rp4" id="respuesta41" class="">
+        <label for="respuesta41">9-17-33</label> <br>
+        <input type="radio" name="rp4" id="respuesta42" class="">
+        <label for="respuesta42">8-15-36</label> <br>
+        <input type="radio" name="rp4" id="respuesta43" class="">
+        <label for="respuesta43">6-40-98</label> <br>
+        <input type="radio" name="rp4" id="respuesta44" class="">
+        <label for="respuesta44">10-20-30</label> <br>
+        <input type="radio" name="rp4" id="respuesta45" class="">
+        <label for="respuesta45">8-16-32</label>
+    </div>
+
+    <div id="pregunta5">Un atacante puede dejar fuera de servicio el sitio web enviando un
+        gran volumen de tráfico de red a los servidores. ¿Qué servicio de
+        Azure puede ayudar a proteger su instancia de App Service ante este
+        tipo de ataque?
+        <br><br>
+        Seleccione una respuesta: <br>
+        <input type="radio" name="rp5" id="respuesta51" class="">
+        <label for="respuesta51">Azure Firewall</label> <br>
+        <input type="radio" name="rp5" id="respuesta52" class="">
+        <label for="respuesta52">Grupos de seguridad de red</label> <br>
+        <input type="radio" name="rp5" id="respuesta53" class="">
+        <label for="respuesta53">Azure DDoS Protection</label> <br>
+        <input type="radio" name="rp5" id="respuesta54" class="">
+        <label for="respuesta54">Azure Key Vault
+        </label> <br>
+        <input type="radio" name="rp5" id="respuesta55" class="">
+        <label for="respuesta55">Azure Search</label>
+    </div>
+
+    <input id="boton" type="button" value="CORREGIR" onclick="corregir()">
+</body>
+</html>
+
+<!--AÑADIR un  número de preguntas acertadas? llevar a otra página??-->

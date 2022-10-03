@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 4</title>
+
+    <style>
+        #letrero{background-color: #ffa500;color: #0000ff;margin-right: 76%;font-size: 30px;margin-bottom: 15px;}
+        #contenedor{border: black 10px solid;width: 40%;background-color: #ffff00;color: black;height: 23vh;}
+        #etiquetas{text-align: center;float:left ;border: black solid 0px;height: 100%;font-size: 20px;font-family:'Times New Roman', Times, serif;font-weight: 400;margin-left: 7px;}
+        p{margin-top: 1vh;}
+        #objetos{border: blue dotted 0px;width: 67%;float:right;height: 100%;}
+        input[type=text]{height: 20px;}
+        #seleccion1{width: 180px;}
+        #numero1{width: 100px;}
+        #numero2{width: 50px;}
+        a{font-size: 30px;}
+    </style>
+
+<script>
+    function comprobar(){
+        if (document.getElementById('texto1').value.length<4){alert('El campo nombre NO está rellenado correctamente.');
+        document.getElementById('texto1').focus();
+    }
+        if (document.getElementById('texto2').value.length<3){alert('El campo Primer Apellido NO está rellenado correctamente.');
+        document.getElementById('texto2').focus();
+    }
+        if (document.getElementById('texto3').value.length<3){alert('El campo Segundo Apellido NO está rellenado correctamente.') ;
+        document.getElementById('texto3').focus();
+    }
+
+    if(document.getElementById('texto4').value.length<8){
+        alert('El campo Correo Electrónico NO está rellenado correctamente.')
+    }
+
+    else if(document.getElementById('texto4').value.indexOf("@")==-1){
+        alert('Le falta el @ a su correo electrónico.')
+    }
+
+    if (document.getElementById('seleccion1').value == 0){
+        alert('El campo ZONA de afiliación NO es válido. Seleccione su provincia.');           
+    }
+
+    if (isNaN(document.getElementById('numero1').value)){alert('El campo del primer número de afiliación NO es correcto. \nUtilice números.');}
+    else if(document.getElementById('numero1').value.length=7){alert('El campo del primer número de afiliación NO es correcto.\nNecesita un número de 7 caracteres.');
+    document.getElementById('numero1').focus();
+    }
+
+    if (isNaN(document.getElementById('numero2').value)){alert('El campo del segundo número de afiliación NO es correcto. \nUtilice números.');}
+    else if(document.getElementById('numero2').value.length==0 || document.getElementById('numero2').value.length>2){
+        alert('El campo del segundo número de afiliación NO es correcto.\nNecesita un número de 1 o 2 caracteres.');
+        document.getElementById('numero2').focus();
+    }
+    }
+</script>
+</head>
+<body>
+    
+
+    <div id="letrero">Solicitud del Informe de Vida Laboral</div>
+
+    <div id="contenedor">
+        <div id="etiquetas">
+            <p>Nombre:</p>
+            <p>Primer Apellido:</p>
+            <p>Segundo Apellido:</p>
+            <p>Correo Electrónico:</p>
+            <p>Número de afiliado a la S.S.:  </p>
+        </div>
+
+        <div id="objetos">
+            <p><input type="text" name="" id="texto1"></p>
+            <p><input type="text" name="" id="texto2"></p>
+            <p><input type="text" name="" id="texto3"></p>
+            <p><input type="text" name="" id="texto4"></p>
+            <p><select name="" id="seleccion1">
+                <option value=""></option>
+                <option value="1">A CORUÑA</option>
+                <option value="2">MADRID</option>
+                <option value="3">BURGOS</option>
+                <option value="4">MURCIA</option>
+            </select>
+            / <input type="text" name="" id="numero1"> / <input type="text" name="" id="numero2"></p>
+
+        </div>
+    </div>
+
+    <div id="pulsadores">
+     <a href="" onclick="comprobar()">Enviar</a>
+     <a href="" type="reset">Borrar</a>
+    </div>
+   
+</body>
+</html>
+
+

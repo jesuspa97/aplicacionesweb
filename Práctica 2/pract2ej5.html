@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 5</title>
+
+    <style>
+        #contenedor{border: 5px red solid;width: 49.6vh;margin-inline: 34%;height: 29vh;background-color: black;}
+        #pantalla{border: 4px yellow dotted;height:6vh;color: white;text-align: right; font-size: 50px;}
+        #teclas{border: 5px blue solid;height: 20vh;}
+        input[type=button]{width: 11.8vh;height: 4.7vh;background-color: #333333;color: white;border-radius: 10%;font-size: 20px;margin-top:5px ;border: 0px;}
+        p{position: relative;top: -5.5vh;}
+        input[type=reset]{width: 11.8vh;height: 4.7vh;background-color: #333333;color: white;border-radius: 10%;font-size: 20px;margin-top:5px ;border: 0px;}
+        input.tecla10{background-color: #fda005;}
+        input.tecla11{background-color: #fda005;}
+        input.tecla12{background-color: #fda005;}
+        input.tecla16{background-color: #fda005;}
+        input.tecla13{background-color: #a5a5a5;}
+    </style>
+
+
+</head>
+<body>
+    <script>
+        function añadir(number){
+            op = document.getElementById('pantallanum').innerHTML
+            document.getElementById('pantallanum').innerHTML = op + number
+        }
+
+        function sumar(suma){
+            op = document.getElementById('pantallanum').innerHTML
+            simbolosuma= ""
+            suma=document.getElementById('pantallanum').innerHTML=simbolosuma
+            op2= document.getElementById('pantallanum').innerHTML
+        }
+    </script>
+
+    <div id="contenedor">
+        <div id="pantalla"><p id="pantallanum"></p></div>
+
+        <div id="teclas">
+            <input type="button" value="1" id="tecla1" class="tecla1" onclick="añadir(value)">
+            <input type="button" value="2" id="tecla2" class="tecla2" onclick="añadir(value)">
+            <input type="button" value="3" id="tecla3" class="tecla3" onclick="añadir(value)">
+            <input type="button" value="+" id="tecla10" class="tecla10" onclick="sumar(value)">
+            <input type="button" value="4" id="tecla4" class="tecla4" onclick="añadir(value)">
+            <input type="button" value="5" id="tecla5" class="tecla5" onclick="añadir(value)">
+            <input type="button" value="6" id="tecla6" class="tecla6" onclick="añadir(value)">
+            <input type="button" value="-" id="tecla11" class="tecla11">
+            <input type="button" value="7" id="tecla7" class="tecla7" onclick="añadir(value)">
+            <input type="button" value="8" id="tecla8" class="tecla8" onclick="añadir(value)">
+            <input type="button" value="9" id="tecla9" class="tecla9" onclick="añadir(value)">           
+            <input type="button" value="X" id="tecla12" class="tecla12" >
+            <input type="reset" value="C" id="tecla13" class="tecla13" >
+            <input type="button" value="0" id="tecla14" class="tecla14" onclick="añadir(value)">
+            <input type="button" value="=" id="tecla15" class="tecla15" onclick="nuevotexto()">
+            <input type="button" value="÷" id="tecla16" class="tecla16">
+        </div>
+    </div>
+
+
+</body>
+</html>

@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2</title>
+    <style>
+
+        #datos{border: 2px solid black;margin-inline: 35vh;font-size: 40px;padding-left: 20px;margin-bottom: 2px;}
+        #final{border: 2px solid black;margin-inline: 35vh;font-size: 40px;padding-left: 20px;}
+        input[type=radio]{width: 20px;border: 0px;height: 30px;position: relative;bottom: -3px;}
+        input[type=checkbox]{width: 25px;border: 0px;height: 30px;position: relative;bottom: -3px;}
+        #dinerito{/*border: 3px solid red;*/ position: relative;width: 300px;height: 90px;left: -10vh;bottom: 3.7vh; float: right;font-size: 80px;}
+    </style>
+</head>
+<body>
+    <script>
+        function cobrototal(){
+            var error=0
+            var motor = 0;
+            if (document.getElementById('gasolina').checked){
+                motor = 0;
+            }
+            if (document.getElementById('diesel').checked){
+                motor = 1500;
+            }
+            if (document.getElementById('hibrido').checked){
+                motor = 3000;
+            }
+            
+    
+        
+            var puertas = 0;
+            if ((document.getElementById('3puertas').checked)&&(document.getElementById('gasolina').checked)){
+                puertas = -2000;}
+            else if((document.getElementById('3puertas').checked)&&(!document.getElementById('gasolina').checked)){
+                alert('La opción de 3 puertas SÓLO disponible con gasolina , cambie su elección por favor.');
+                puertas= 'error';
+                document.getElementById('dinerito').innerHTML='ERROR';
+                error=1
+            document.getElementById('gasolina').focus}
+
+            if (document.getElementById('5puertas').checked){
+                puertas = 0;
+            }
+            if (document.getElementById('familiar').checked){
+                puertas = 1500;
+            }
+            
+    
+            
+            var color = 0;
+            if (document.getElementById('rojo').checked){
+                color = 0;
+            }
+            if (document.getElementById('verde').checked){
+                color = 0;
+            }
+            if (document.getElementById('naranja').checked){
+                color = 0;
+            }
+            if (document.getElementById('blanco').checked){
+                color = -500;
+            }
+            if (document.getElementById('negro').checked){
+                color = -600;
+            }
+            
+    
+            
+            var extras = 0;
+            if (((document.getElementById('metalizada').checked))&&((document.getElementById('rojo').checked)|(document.getElementById('verde').checked)|(document.getElementById('naranja').checked))){
+                extras += 750;
+            }
+            else{alert('La opción pintura metalizada SÓLO disponible con los colores rojo,verde y naranja , cambie su elección por favor.'); extras='error';error=1;}
+
+            if (document.getElementById('llantas').checked){
+                extras += 200;
+            }
+            if (document.getElementById('climatizador').checked){
+                extras += 800;
+            }
+            if (document.getElementById('gps').checked){
+                extras += 340;
+            }
+            if ((document.getElementById('dvd').checked)&(document.getElementById('familiar').checked)){
+                extras += 800;
+            }
+            else{alert('La opción DVD SÓLO disponible con el cohe tamaño familiar, cambie su elección por favor.'); extras='error';error=1;}
+                    
+            if(error==0){
+                var calculo=12000
+                calculo=calculo+motor+puertas+color+extras
+                document.getElementById('dinerito').innerHTML=calculo+'€'
+            }
+            else{
+                document.getElementById('dinerito').innerHTML='ERROR'
+            }
+                
+                
+        }    
+            
+        
+    </script>
+
+    <div id="contenedor">
+        <div id="datos">
+            Configuración del coche
+        </div>
+
+        <div id="datos">
+            Tipo de Motor <br>
+            <input type="radio" name="motor" id="gasolina">
+            <label for="gasolina">Gasolina</label>
+            <input type="radio" name="motor" id="diesel">
+            <label for="diesel">Diesel(+1500€)</label>
+            <input type="radio" name="motor" id="hibrido">
+            <label for="hibrido">Híbrido(+3000€)
+            </label>            
+        </div>
+
+        <div id="datos">
+            Tipo de Puertas <br>
+            <input type="radio" name="" id="3puertas">
+            <label for="3puertas">3 Puertas (-2000€) (Sólo con Gasolina)</label>
+            <input type="radio" name="" id="5puertas">
+            <label for="5puertas">5 Puertas</label>
+            <input type="radio" name="" id="familiar">
+            <label for="familiar">Familiar (+1500€)
+            </label>            
+        </div>
+            
+        <div id="datos">
+            Tipo de Pintura <br>
+            <input type="radio" name="" id="rojo">
+            <label for="rojo">Rojo</label>
+            <input type="radio" name="" id="verde">
+            <label for="verde">Verde</label>
+            <input type="radio" name="" id="naranja">
+            <label for="naranja">Naranja</label>
+            <input type="radio" name="" id="blanco">
+            <label for="blanco">Blanco (-500€)</label>
+            <input type="radio" name="" id="negro">
+            <label for="negro">Negro (-600€)</label>
+        </div>
+
+        <div id="datos">
+            Seleccionar las que se deseen: <br>
+            <input type="checkbox" name="" id="metalizada">
+            <label for="metalizada">Metalizada (+750€) (Solo Rojo. Verde o Naranja)</label><br>
+            <input type="checkbox" name="" id="llantas">
+            <label for="llantas">Llantas (+200€)</label><br>
+            <input type="checkbox" name="" id="climatizador">
+            <label for="climatizador">Climatizador (+800€)</label><br>
+            <input type="checkbox" name="" id="gps">
+            <label for="gps">GPS (+340€)</label><br>
+            <input type="checkbox" name="" id="dvd">
+            <label for="dvd">DVD (+800€) (Solo modelo Familiar)</label><br>
+        </div>
+
+        <div id="final">
+            Total a Cobrar <br>
+            <input type="button" value="Calcular" onclick="cobrototal()">
+            <div id="dinerito">0€</div>
+        </div>
+    </div>
+ 
+</body>
+</html>
+
+<!--Tienes que desarrollar un formulario para la compra de un coche. Partimos de un precio 
+base de 12.000€, que puede variar según las equipaciones que escoja cada persona:-->
+
+
+<!--    <script>
+        function cobrototal(vmotor,vpuertas,vcolor,vextras,vcalculo){
+            function vmotor(){
+                var motor = 0;
+            if (document.getElementById('gasolina').checked){
+                motor = 0;
+            }
+            if (document.getElementById('diesel').checked){
+                motor = 1500;
+            }
+            if (document.getElementById('hibrido').checked){
+                motor = 3000;
+            }
+            return motor;}
+    
+        function vpuertas(){
+            var puertas = 0;
+            if (document.getElementById('3puertas').checked){
+                puertas = -2000;
+            }
+            if (document.getElementById('5puertas').checked){
+                puertas = 0;
+            }
+            if (document.getElementById('familiar').checked){
+                puertas = 1500;
+            }
+            return puertas;}
+    
+            function vcolor(){
+            var color = 0;
+            if (document.getElementById('rojo').checked){
+                color = 0;
+            }
+            if (document.getElementById('verde').checked){
+                color = 0;
+            }
+            if (document.getElementById('naranja').checked){
+                color = 0;
+            }
+            if (document.getElementById('blanco').checked){
+                color = -500;
+            }
+            if (document.getElementById('negro').checked){
+                color = -600;
+            }
+            return puertas;}
+    
+            function vextras(){
+            var extras = 0;
+            if (document.getElementById('metalizada').checked){
+                extras = 750;
+            }
+            if (document.getElementById('llantas').checked){
+                extras = 200;
+            }
+            if (document.getElementById('climatizador').checked){
+                extras = 800;
+            }
+            if (document.getElementById('gps').checked){
+                extras = 340;
+            }
+            if (document.getElementById('dvd').checked){
+                extras = 800;
+            }
+            return extras;}        
+    
+            function vcalculo(vmotor,vpuertas,vcolor,vextras){
+                var calculo=0
+                12000+vmotor+vpuertas+vcolor+vextras
+                return calculo;
+            }
+            document.getElementById('dinerito').innerHTML=calculo+'€'
+    
+        }
+    </script>-->
