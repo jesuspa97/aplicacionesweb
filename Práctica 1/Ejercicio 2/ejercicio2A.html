@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2A</title>
+
+    <style>
+        body{width: 80%;}
+        #caja{margin-inline: 10%;}
+        #titulo{background-color: #eaeaea; width: 60%;height: 3vh;text-align: center;}
+        u{color: red;}
+        button{float: right;border-radius: 12%;margin-left: 1%;}
+        fieldset{margin: 1%;background-color: #efefef;height: 23vh;position: relative;width: 75vh;}
+        legend{border: 2px solid #f2f2f2;}
+        input{margin-right: 1%;margin-top: 1%;}
+        #columna1{margin-right: 5PX;float: left;height: 8vh;width: 47vh;position: relative;}
+        #columna2{margin-right: 5PX;float: left;height: 8vh;width: 20vh;position: relative;left: -230px;top: 2px;}
+        #columna3{margin-right: 5PX;float: left;height: 8vh;width: 30vh;position: relative;left: 430px;bottom: 78px;}
+        #botones{border: 1px black;position: relative;width: 30vh;height: 10vh;float: right;top: 100px;}
+        #prov{position: relative;bottom: 4px;}
+        #provincia{top: 6px;position: relative;}
+        
+    </style>
+</head>
+<body>
+    <div id="caja">
+    <div id="titulo">
+        <h2><b>EJEMPLO DE FORMULARIO</b></h2>
+    </div>
+
+    
+        <form>
+            <fieldset>
+                <legend>Datos personales</legend>
+                <div id="columna1">
+                    <label><u>A</u>pellidos:<br></label><input type="text"><br>
+                    <label><u>N</u>acido en:<br></label><input type="text"><br>
+                    <div>
+                    <label>Do<u>m</u>icilio:<br></label><select>
+                        <option></option>
+                        <option>Avenida</option>
+                        <option>Calle</option>
+                    </select><label for=""></label><input type="text"  size="30px"></div>                    
+                    <label for=""><u>L</u>ocalidad:<br></label><input type="text">
+                </div>
+                
+                <div id="columna2">
+                 <label>N<u>o</u>mbre:<br></label><input type="text"><br>
+                 <label>Provincia:<br></label><select id="provincia">
+                    <option value="">Valencia</option>
+                    <option>Madrid</option>
+                 </select><br>
+                 <br><br><br>
+                 <label id="prov">Provincia:<br></label><select>
+                    <option value="">Valencia</option>
+                    <option>Madrid</option>
+                </select>
+                </div>
+
+
+                
+                <div id="columna3">
+                <label><u>D</u>NI:<br></label><input type="text"><br>
+
+                <label for=""><u>F</u>echa Nacimiento (dd/mm/aaaa)<br></label><input type="date" value="AAAA-MM-DD" min="1920-01-01" max="14-09-2004"><br>
+
+                <label for=""><u>C</u>ódigo Postal:<br></label><input type="number" min="10000" max="99999"><br>
+
+                <label for=""><u>T</u>eléfono:<br></label><input type="number" min="600000000" max="999999999"><br>
+            </div>
+
+            <div id="botones">
+                <button type="submit">Enviar</button>
+                <button type="reset">Borrar Todo</button>   
+            </div>
+           
+
+            </fieldset>
+        </form>
+    </div>
+    
+</body>
+</html>

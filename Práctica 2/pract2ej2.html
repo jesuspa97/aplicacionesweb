@@ -73,7 +73,7 @@
             if (((document.getElementById('metalizada').checked))&&((document.getElementById('rojo').checked)|(document.getElementById('verde').checked)|(document.getElementById('naranja').checked))){
                 extras += 750;
             }
-            else{alert('La opción pintura metalizada SÓLO disponible con los colores rojo,verde y naranja , cambie su elección por favor.'); extras='error';error=1;}
+            else if(((document.getElementById('metalizada').checked))&&((!document.getElementById('rojo').checked)|(!document.getElementById('verde').checked)|(!document.getElementById('naranja').checked))){alert('La opción pintura metalizada SÓLO disponible con los colores rojo,verde y naranja , cambie su elección por favor.'); extras='error';error=1;}
 
             if (document.getElementById('llantas').checked){
                 extras += 200;
@@ -87,7 +87,7 @@
             if ((document.getElementById('dvd').checked)&(document.getElementById('familiar').checked)){
                 extras += 800;
             }
-            else{alert('La opción DVD SÓLO disponible con el cohe tamaño familiar, cambie su elección por favor.'); extras='error';error=1;}
+            else if((document.getElementById('dvd').checked)&(!document.getElementById('familiar').checked)){alert('La opción DVD SÓLO disponible con el cohe tamaño familiar, cambie su elección por favor.'); extras='error';error=1;}
                     
             if(error==0){
                 var calculo=12000
@@ -122,40 +122,40 @@
 
         <div id="datos">
             Tipo de Puertas <br>
-            <input type="radio" name="" id="3puertas">
+            <input type="radio" name="puertas" id="3puertas">
             <label for="3puertas">3 Puertas (-2000€) (Sólo con Gasolina)</label>
-            <input type="radio" name="" id="5puertas">
+            <input type="radio" name="puertas" id="5puertas">
             <label for="5puertas">5 Puertas</label>
-            <input type="radio" name="" id="familiar">
+            <input type="radio" name="puertas" id="familiar">
             <label for="familiar">Familiar (+1500€)
             </label>            
         </div>
             
         <div id="datos">
             Tipo de Pintura <br>
-            <input type="radio" name="" id="rojo">
+            <input type="radio" name="pintura" id="rojo">
             <label for="rojo">Rojo</label>
-            <input type="radio" name="" id="verde">
+            <input type="radio" name="pintura" id="verde">
             <label for="verde">Verde</label>
-            <input type="radio" name="" id="naranja">
+            <input type="radio" name="pintura" id="naranja">
             <label for="naranja">Naranja</label>
-            <input type="radio" name="" id="blanco">
+            <input type="radio" name="pintura" id="blanco">
             <label for="blanco">Blanco (-500€)</label>
-            <input type="radio" name="" id="negro">
+            <input type="radio" name="pintura" id="negro">
             <label for="negro">Negro (-600€)</label>
         </div>
 
         <div id="datos">
             Seleccionar las que se deseen: <br>
-            <input type="checkbox" name="" id="metalizada">
+            <input type="checkbox" name="extras" id="metalizada">
             <label for="metalizada">Metalizada (+750€) (Solo Rojo. Verde o Naranja)</label><br>
-            <input type="checkbox" name="" id="llantas">
+            <input type="checkbox" name="extras" id="llantas">
             <label for="llantas">Llantas (+200€)</label><br>
-            <input type="checkbox" name="" id="climatizador">
+            <input type="checkbox" name="extras" id="climatizador">
             <label for="climatizador">Climatizador (+800€)</label><br>
-            <input type="checkbox" name="" id="gps">
+            <input type="checkbox" name="extras" id="gps">
             <label for="gps">GPS (+340€)</label><br>
-            <input type="checkbox" name="" id="dvd">
+            <input type="checkbox" name="extras" id="dvd">
             <label for="dvd">DVD (+800€) (Solo modelo Familiar)</label><br>
         </div>
 
